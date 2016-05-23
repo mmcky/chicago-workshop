@@ -6,7 +6,7 @@ FROM jupyter/datascience-notebook
 
 MAINTAINER Matthew McKay <mamckay@gmail.com>
 
-# USER root
+USER root
 
 ##-Add Additional Debian Packages-#
 #RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng
@@ -42,7 +42,7 @@ MAINTAINER Matthew McKay <mamckay@gmail.com>
 ##RUN chmod a+rX /srv/templates#
 
 ##-Add Notebooks-#
-#ADD notebooks/ /home/jovyan/work/#
+ADD notebooks/ /home/jovyan/work/
 
 ##-Convert notebooks to the current format-#
 #RUN find /home/. -name '*.ipynb' -exec jupyter nbconvert --to notebook {} --output {} \;
