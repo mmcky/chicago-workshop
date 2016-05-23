@@ -48,13 +48,13 @@ ADD notebooks/ /home/jovyan/work/
 #RUN find /home/. -name '*.ipynb' -exec jupyter nbconvert --to notebook {} --output {} \;
 #RUN find /home/. -name '*.ipynb' -exec jupyter trust {} \;
 
-# USER jovyan
+USER jovyan
 
 #-Additional Julia Packages-#
-#RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
-#RUN julia -e 'Pkg.add("PyCall"); Pkg.checkout("PyCall"); Pkg.build("PyCall"); using PyCall'
-#RUN julia -e 'Pkg.add("IJulia"); using IJulia'
-#RUN julia -e 'Pkg.add("PyPlot"); Pkg.checkout("PyPlot"); Pkg.build("PyPlot"); using PyPlot' 
-#RUN julia -e 'Pkg.add("Distributions"); using Distributions'
-#RUN julia -e 'Pkg.add("KernelEstimator"); using KernelEstimator'
-#RUN julia -e 'Pkg.update()'
+RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
+RUN julia -e 'Pkg.add("PyCall"); Pkg.checkout("PyCall"); Pkg.build("PyCall"); using PyCall'
+RUN julia -e 'Pkg.add("IJulia"); using IJulia'
+RUN julia -e 'Pkg.add("PyPlot"); Pkg.checkout("PyPlot"); Pkg.build("PyPlot"); using PyPlot' 
+RUN julia -e 'Pkg.add("Distributions"); using Distributions'
+RUN julia -e 'Pkg.add("KernelEstimator"); using KernelEstimator'
+RUN julia -e 'Pkg.update()'
