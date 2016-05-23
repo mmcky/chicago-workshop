@@ -1,4 +1,4 @@
-# Econometrics Book Docker Image
+# Base Docker Image
 # User: jovyan
 # This uses the Jupyter DataScience Docker Container with Python, R and Julia
 
@@ -9,8 +9,8 @@ MAINTAINER Matthew McKay <mamckay@gmail.com>
 USER root
 
 #-Add Additional Debian Packages-#
-RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng
-RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
+#RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng
+#RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
 
 #-Upgrade to Python=3.5-#
 RUN conda install --yes \
