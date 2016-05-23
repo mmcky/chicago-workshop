@@ -9,8 +9,8 @@ MAINTAINER Matthew McKay <mamckay@gmail.com>
 USER root
 
 #-Add Additional Debian Packages-#
-#RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng
-#RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
+RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng
+RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
 
 #-Upgrade to Python=3.5-#
 RUN conda install --yes \
@@ -37,9 +37,9 @@ RUN pip install quantecon
 RUN $CONDA_DIR/envs/python2/bin/pip install quantecon
 
 #-Add Templates-#
-ADD jupyter_notebook_config.py /home/jovyan/.jupyter/
-ADD templates/ /srv/templates/
-RUN chmod a+rX /srv/templates
+#ADD jupyter_notebook_config.py /home/jovyan/.jupyter/
+#ADD templates/ /srv/templates/
+#RUN chmod a+rX /srv/templates
 
 #-Add Notebooks-#
 ADD notebooks/ /home/jovyan/work/
