@@ -48,7 +48,7 @@ USER root
 #RUN find /home/. -name '*.ipynb' -exec jupyter nbconvert --to notebook {} --output {} \;
 #RUN find /home/. -name '*.ipynb' -exec jupyter trust {} \;
 
-USER jovyan
+# USER jovyan
 
 #-Additional Julia Packages-#
 RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
