@@ -6,7 +6,7 @@ FROM jupyter/datascience-notebook
 
 MAINTAINER Matthew McKay <mamckay@gmail.com>
 
-USER root
+# USER root
 
 ##-Add Additional Debian Packages-#
 #RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng
@@ -51,10 +51,10 @@ USER root
 # USER jovyan
 
 #-Additional Julia Packages-#
-RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
-RUN julia -e 'Pkg.add("PyCall"); Pkg.checkout("PyCall"); Pkg.build("PyCall"); using PyCall'
-RUN julia -e 'Pkg.add("IJulia"); using IJulia'
-RUN julia -e 'Pkg.add("PyPlot"); Pkg.checkout("PyPlot"); Pkg.build("PyPlot"); using PyPlot' 
-RUN julia -e 'Pkg.add("Distributions"); using Distributions'
-RUN julia -e 'Pkg.add("KernelEstimator"); using KernelEstimator'
-RUN julia -e 'Pkg.update()'
+#RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
+#RUN julia -e 'Pkg.add("PyCall"); Pkg.checkout("PyCall"); Pkg.build("PyCall"); using PyCall'
+#RUN julia -e 'Pkg.add("IJulia"); using IJulia'
+#RUN julia -e 'Pkg.add("PyPlot"); Pkg.checkout("PyPlot"); Pkg.build("PyPlot"); using PyPlot' 
+#RUN julia -e 'Pkg.add("Distributions"); using Distributions'
+#RUN julia -e 'Pkg.add("KernelEstimator"); using KernelEstimator'
+#RUN julia -e 'Pkg.update()'
