@@ -61,9 +61,9 @@ USER jovyan
 
 #-Additional Julia Packages-#
 RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
-RUN julia -e 'Pkg.add("PyCall"); Pkg.checkout("PyCall"); Pkg.build("PyCall"); using PyCall'
-RUN julia -e 'Pkg.add("IJulia"); using IJulia'
-RUN julia -e 'Pkg.add("PyPlot"); Pkg.checkout("PyPlot"); Pkg.build("PyPlot"); using PyPlot' 
-RUN julia -e 'Pkg.add("Distributions"); using Distributions'
-RUN julia -e 'Pkg.add("KernelEstimator"); using KernelEstimator'
-RUN julia -e 'Pkg.update()'
+RUN /usr/bin/julia -e 'Pkg.add("PyCall"); Pkg.checkout("PyCall"); Pkg.build("PyCall"); using PyCall'
+RUN /usr/bin/julia -e 'Pkg.add("IJulia"); using IJulia'
+RUN /usr/bin/julia -e 'Pkg.add("PyPlot"); Pkg.checkout("PyPlot"); Pkg.build("PyPlot"); using PyPlot' 
+RUN /usr/bin/julia -e 'Pkg.add("Distributions"); using Distributions'
+RUN /usr/bin/julia -e 'Pkg.add("KernelEstimator"); using KernelEstimator'
+RUN /usr/bin/julia -e 'Pkg.update()'
