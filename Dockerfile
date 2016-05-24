@@ -15,11 +15,11 @@ RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
 
 #-Upgrade Julia-#
 RUN apt-get remove julia -y
-RUN apt-get install julia -y
+#RUN apt-get install julia -y
 #RUN apt-add-repository ppa:staticfloat/juliareleases && apt-add-repository ppa:staticfloat/julia-deps && apt-get update && apt-get install julia
-#RUN wget https://julialang.s3.amazonaws.com/bin/linux/x64/0.4/julia-0.4.5-linux-x86_64.tar.gz
-#RUN tar -xvf julia-0.4.5-linux-x86_64.tar.gz
-#RUN ln -s ./julia-2ac304dfba/bin/julia /usr/local/bin/julia
+RUN wget https://julialang.s3.amazonaws.com/bin/linux/x64/0.4/julia-0.4.5-linux-x86_64.tar.gz
+RUN tar -xvf julia-0.4.5-linux-x86_64.tar.gz
+RUN ln -s ./julia-2ac304dfba/bin/julia /usr/bin/julia
 
 #-Upgrade to Python=3.5-#
 RUN conda install --yes \
