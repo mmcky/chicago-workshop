@@ -1,7 +1,7 @@
 #-This has been modelled off of jupyter/docker-demo-images (https://github.com/jupyter/docker-demo-images.git)-#
 
 image:
-	docker build -t mmcky/chicago-fed .
+	docker build -t mmcky/chicago .
 
 relaunch:
 	docker stop $(docker ps -a -q)
@@ -12,7 +12,7 @@ launch:
 	./scripts/run.sh
 
 super-nuke: nuke
-	-docker rmi mmcky/chicago-fed
+	-docker rmi mmcky/chicago
 
 # Cleanup with fangs
 nuke:
