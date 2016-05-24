@@ -13,6 +13,8 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng
 RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
 
+RUN apt-get install upgrade
+
 #-Upgrade to Python=3.5-#
 RUN conda install --yes \
 	python=3.5 \
