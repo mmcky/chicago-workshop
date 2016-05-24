@@ -14,7 +14,7 @@ RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng
 RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
 
 RUN apt-get upgrade -y
-RUN apt-get install julia
+sudo apt-get dist-upgrade julia
 
 #-Upgrade to Python=3.5-#
 RUN conda install --yes \
