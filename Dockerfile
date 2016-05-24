@@ -15,7 +15,7 @@ RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
 
 #-Upgrade Julia-#
 RUN wget https://julialang.s3.amazonaws.com/bin/linux/x64/0.4/julia-0.4.5-linux-x86_64.tar.gz
-RUN untar -xvf julia-0.4.5-linux-x86_64.tar.gz
+RUN tar -xvf julia-0.4.5-linux-x86_64.tar.gz
 RUN ln -s ./julia-2ac304dfba/bin/julia /usr/local/bin/julia
 
 #-Upgrade to Python=3.5-#
