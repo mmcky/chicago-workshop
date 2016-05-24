@@ -18,8 +18,8 @@ RUN apt-get remove julia -y
 #RUN apt-get install julia -y
 #RUN apt-add-repository ppa:staticfloat/juliareleases && apt-add-repository ppa:staticfloat/julia-deps && apt-get update && apt-get install julia
 RUN wget https://julialang.s3.amazonaws.com/bin/linux/x64/0.4/julia-0.4.5-linux-x86_64.tar.gz
-RUN tar -xvf julia-0.4.5-linux-x86_64.tar.gz
-RUN ln -s ./julia-2ac304dfba/bin/julia /usr/bin/julia
+RUN tar -xvf julia-0.4.5-linux-x86_64.tar.gz julia
+RUN ln -sf ./julia/bin/julia /usr/bin/julia
 
 #-Upgrade to Python=3.5-#
 RUN conda install --yes \
@@ -61,9 +61,9 @@ USER jovyan
 
 #-Additional Julia Packages-#
 RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
-RUN /usr/bin/julia -e 'Pkg.add("PyCall"); Pkg.checkout("PyCall"); Pkg.build("PyCall"); using PyCall'
-RUN /usr/bin/julia -e 'Pkg.add("IJulia"); using IJulia'
-RUN /usr/bin/julia -e 'Pkg.add("PyPlot"); Pkg.checkout("PyPlot"); Pkg.build("PyPlot"); using PyPlot' 
-RUN /usr/bin/julia -e 'Pkg.add("Distributions"); using Distributions'
-RUN /usr/bin/julia -e 'Pkg.add("KernelEstimator"); using KernelEstimator'
-RUN /usr/bin/julia -e 'Pkg.update()'
+RUN julia -e 'Pkg.add("PyCall"); Pkg.checkout("PyCall"); Pkg.build("PyCall"); using PyCall'
+RUN julia -e 'Pkg.add("IJulia"); using IJulia'
+RUN julia -e 'Pkg.add("PyPlot"); Pkg.checkout("PyPlot"); Pkg.build("PyPlot"); using PyPlot' 
+RUN julia -e 'Pkg.add("Distributions"); using Distributions'
+RUN julia -e 'Pkg.add("KernelEstimator"); using KernelEstimator'
+RUN julia -e 'Pkg.update()'
