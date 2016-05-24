@@ -10,7 +10,7 @@ USER root
 
 #-Add Additional Debian Packages-#
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng untar
+RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng tar
 RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
 
 #-Upgrade Julia-#
