@@ -13,8 +13,10 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends curl ca-certificates dvipng
 RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" > ~/.curlrc
 
-RUN apt-get upgrade -y
-RUN apt-get dist-upgrade julia
+#-Upgrade Julia-#
+RUN wget https://julialang.s3.amazonaws.com/bin/linux/x64/0.4/julia-0.4.5-linux-x86_64.tar.gz
+RUN untar -xvf julia-0.4.5-linux-x86_64.tar.gz
+RUN ln -s ./julia-2ac304dfba/bin/julia /usr/local/bin/julia
 
 #-Upgrade to Python=3.5-#
 RUN conda install --yes \
