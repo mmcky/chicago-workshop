@@ -44,6 +44,9 @@ RUN conda install --yes \
 #-Additional Python Packages-#
 RUN pip install quantecon
 RUN $CONDA_DIR/envs/python2/bin/pip install quantecon
+RUN pip install dolo
+RUN pip install interpolation
+RUN pip install ruamel.yaml
 
 #-Add Templates-#
 #ADD jupyter_notebook_config.py /home/jovyan/.jupyter/
