@@ -40,6 +40,8 @@ RUN conda install --yes python=3.5 \
     'bokeh' \
     'xlrd' \
     'pandas-datareader' \
+    'lxml' \
+    'html5lib' \
     && conda clean -yt
 
 #-Additional Python Packages-#
