@@ -42,6 +42,7 @@ RUN conda install --yes python=3.5 \
     'pandas-datareader' \
     'lxml' \
     'html5lib' \
+    'BeautifulSoup4' \
     && conda clean -yt
 
 #-Additional Python Packages-#
