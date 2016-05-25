@@ -24,21 +24,24 @@ RUN apt-get remove julia -y
 #-Upgrade to Python=3.5-#
 RUN conda install --yes \
 	python=3.5 \
-    'ipywidgets' \
-    'pandas' \
-    'matplotlib' \
-    'scipy' \
-    'seaborn' \
-    'scikit-learn' \
-    'scikit-image' \
-    'sympy' \
-    'cython' \
-    'patsy' \
-    'statsmodels' \
-    'cloudpickle' \
-    'dill' \
-    'numba' \
-    'bokeh' \
+    anaconda \
+#    'ipywidgets' \
+#    'pandas' \
+#    'matplotlib' \
+#    'scipy' \
+#    'seaborn' \
+#    'scikit-learn' \
+#    'scikit-image' \
+#    'sympy' \
+#    'cython' \
+#    'patsy' \
+#    'statsmodels' \
+#    'cloudpickle' \
+#    'dill' \
+#    'numba' \
+#    'bokeh' \
+#    'xlrd' \
+#    'pandas-datareader' \
     && conda clean -yt
 
 #-Additional Python Packages-#
