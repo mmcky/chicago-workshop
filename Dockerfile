@@ -22,9 +22,7 @@ RUN apt-get remove julia -y
 #RUN ln -sf ./julia-2ac304dfba/bin/julia /usr/bin/julia
 
 #-Upgrade to Python=3.5-#
-RUN conda install --yes \
-	python=3.5 \
-    anaconda \
+RUN conda install --yes anaconda python=3.5 \
 #    'ipywidgets' \
 #    'pandas' \
 #    'matplotlib' \
